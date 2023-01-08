@@ -10,7 +10,7 @@ else:
 
 message = f"Last digit of {number} is {last_digit}"
 
-if last_digit == 5:
+if last_digit == 0:
     print(f"{message} and is 0")
 elif last_digit > 5 and last_digit % 10 != 0:
     print(F"{message} and is greater than 5")
