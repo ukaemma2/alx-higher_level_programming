@@ -12,5 +12,6 @@ def fizzbuzz():
         else:
             print("{:d}".format(fb),end=' ')
 
+
 if __name__ == '__main__':
-    fizzbuzz()
+        fizzbuzz()
