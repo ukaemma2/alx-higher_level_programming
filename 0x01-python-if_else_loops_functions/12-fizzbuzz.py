@@ -1,4 +1,4 @@
-#!/usr/bin/pytbon3
+#!/usr/bin/python3
 def fizzbuzz():
     for fb in range(1, 101):
         if fb % 15 == 0:
