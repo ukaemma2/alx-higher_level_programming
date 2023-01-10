@@ -10,8 +10,8 @@ def fizzbuzz():
         elif fb % 5 == 0:
             print("Buzz", end=' ')
         else:
-            print("{:d}".format(fb),end=' ')
+            print("{:d}".format(fb), end=' ')
 
 
 if __name__ == '__main__':
-        fizzbuzz()
+    fizzbuzz()
