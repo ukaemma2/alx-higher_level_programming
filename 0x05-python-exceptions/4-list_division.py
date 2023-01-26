@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-
 def list_division(my_list_1, my_list_2, list_length):
     div = []
     temp_result = 0
-
     for i in range(0, list_length):
         try:
             temp_result = my_list_1[i] / my_list_2[i]
@@ -19,5 +17,4 @@ def list_division(my_list_1, my_list_2, list_length):
         finally:
             pass
         div.append(temp_result)
-        return div
-
+    return div
