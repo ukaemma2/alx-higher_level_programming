@@ -6,11 +6,13 @@ This module defines a simple `Square` class
 
 
 class Square:
+
     """A simple ``Square`` class
     Attribute:
         size (`int`): The size of the ``Square``.
     """
-    def __int__(self, size):
+
+    def __init__(self, size):
         """Construct a ``Square`` Object.
         Args:
             size (`int`): The size of the ``Square``.
