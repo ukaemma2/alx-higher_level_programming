@@ -29,7 +29,7 @@ class Square:
 
     def area(self):
         """compute the area of the ``Square``.
-        Return: 
+        Return:
             int: the area of ``Square``.
         """
         return self._Square__size**2
