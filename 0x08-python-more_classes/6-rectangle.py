@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 1-rectangle
+"""
 Defines a Rectangle class.
 """
 
@@ -12,6 +12,7 @@ class Rectangle:
         decrements with every deletion
     """
 
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Initializes a Rectangle instance.
@@ -21,9 +22,10 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     def __str__(self):
-        """Return an information and nicely printable string representation
+        """Returns an informal and nicely printable string representation
         of a Rectangle instance, filled with the '#' character."""
         if self.__height == 0 or self.__width == 0:
             return ''
@@ -36,15 +38,13 @@ class Rectangle:
 
     def __repr__(self):
         """Return a string representation of a Rectangle instance
-        that is able to recreate a new instance by using eve()
+        that is able to recreate a new instance by using eval()
         """
-
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Delete a rectangle instance"""
-
-        print("Byle rectangle...")
+        """Deletes a Rectangle instance."""
+        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
     @property
@@ -82,16 +82,16 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """fine the area of rectangle instance
+        """Calculates the area of a Rectangle instance
         Returns:
-            Area of a rectangle, given by height * width
+            Area of the the rectangle, given by height * width
         """
         return self.__width * self.__height
 
     def perimeter(self):
-        """calculates the perimeter of a Rectangle instance
+        """Calculates the perimeter of a Rectangle instance
         Returns:
-            perimeter of the rectangle, given by 2 * (height + width)
+            Perimeter of the rectangle, given by 2 * (height + width)
         """
         if self.__height == 0 or self.__width == 0:
             return 0
