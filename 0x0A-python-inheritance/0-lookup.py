@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 
-"""Python Inheritance Modules"""
-
+""" A function that returns the list of available attributes and methods of an object """
 
 def lookup(obj):
-    """ function that returns the list of available.
-    attributes and methods of an object
-    """
+    """ Returns a list of availble attributes """
     return (dir(obj))
