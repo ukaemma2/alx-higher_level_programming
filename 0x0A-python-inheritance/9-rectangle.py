@@ -17,12 +17,12 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__height = height
 
-        """invoking the function area() from parent class"""
+    """invoking the function area() from parent class"""
     def area(self):
         return self.__width * self.__height
 
     def __str__(self):
-         """Return the print() and str() representation of a Rectangle."""
-         string = "[" + str(self.__class__.__name__) + "] "
-         string += str(self.__width) + "/" + str(self.__height)
-         return string
+        """Return the print() and str() representation of a Rectangle."""
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += str(self.__width) + "/" + str(self.__height)
+        return string
