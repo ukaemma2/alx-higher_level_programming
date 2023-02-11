@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-"""define a class that instance attributes"""
+""" Defines a class Student. """
 
 
 class Student:
-    """Representation of class"""
+    """ Represent a student. """
 
-    def __int__(self, first_name, last_name, age):
-        """ Initialize a new Student.
-
+    def __init__(self, first_name, last_name, age):
+        """Initialize a new Student.
         Args:
-            first_name (str): The firstname of the student.
+            first_name (str): The first name of the student.
             last_name (str): The last name of the student.
             age (int): The age of the student.
         """
@@ -17,6 +16,6 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-        def to_json(self):
-            """ Get a dictionary representation of the student. """
-            return self.__dic__
+    def to_json(self):
+        """ Get a dictionary representation of the student. """
+        return self.__dict__
