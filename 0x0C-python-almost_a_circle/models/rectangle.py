@@ -1,77 +1,136 @@
 #!/usr/bin/python3
-"""Define class Rectangle """
-
-
+'''
+    Class Rectangle
+'''
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Defines the ``Rectangle class that inherite from ``Base``"""
+    '''
+        Defining the Rectangle class
+        Inherits from:
+            Base
+    '''
 
-    def __int__(self, width, height, x=0, y=0, id=None):
-        """representation of parameters"""
+    def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
-        self.y = y
         self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
     def width(self):
-        """Returning private attributes of width"""
+        '''
+            Returning private attribute
+        '''
         return self.__width
 
     @width.setter
     def width(self, value):
-        """setting private attribute of width to value"""
+        '''
+            Setting private attribute
+        '''
         self.setter_validation("width", value)
         self.__width = value
 
     @property
     def height(self):
-        """Returning private attribute of height"""
+        '''
+            Returning private attribute
+        '''
         return self.__height
 
     @height.setter
     def height(self, value):
-        """setting private attribute of height to value"""
+        '''
+            Setting private attribute
+        '''
         self.setter_validation("height", value)
         self.__height = value
 
     @property
     def x(self):
-        """Returning private attribute of x """
+        '''
+            Returning private attribute
+        '''
         return self.__x
 
     @x.setter
     def x(self, value):
-        """setting private attribute of x to value"""
+        '''
+            Setting private attribute
+        '''
         self.setter_validation("x", value)
         self.__x = value
 
     @property
     def y(self):
-        """Returning private attribute of y"""
+        '''
+            Returning private attribute
+        '''
         return self.__y
 
     @y.setter
     def y(self, value):
-        """setting private attribute of y to value"""
+        '''
+            Setting private attribute
+        '''
         self.setter_validation("y", value)
         self.__y = value
 
+    def area(self):
+        """Updating the class ``Rectangle`` that returns area"""
+        return (self.width * self.height)
+
+    def display(self):
+        """Updating the class ``Rectangle`` that prints out instance with #"""
+        rectangle = ""
+         rectangle = ""
+        print("\n" * self.y, end="")
+        for i in range(self.height):
+            rectangle += (" " * self.x) + ("#" * self.width) + "\n"
+        print(rectangle, end="")
+
+    def update(self, *args, **kwargs):
+        '''
+            Updates the arguments in the class
+        '''
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
+
+    def to_dictionary(self):
+        '''
+            Returns a dictionary representation of this class
+        '''
+        return {'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
 
     @staticmethod
     def setter_validation(attribute, value):
-        if (value) is not int:
+        if type(value) != int:
             raise TypeError('{} must be an integer'.format(attribute))
-        if attribute == 'x' or attribute == 'y':
+        if attribute  == 'x' or attribute == 'y':
             if value < 0:
                 raise ValueError('{} must be >= 0'.format(attribute))
         elif value <= 0:
-            raise ValueError('{} must be >= 0'.format(attribute))
+            raise ValueError('{} must be > 0'.format(attribute))
 
     def __str__(self):
-        """overwritten the str method"""
-        return '[Rectangle] ({} {}/{} - {}/{}'.format(self.id, self.x, self.y,
-                                                    self.width, self.height)
+        """Overwritting the str method"""
+
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
