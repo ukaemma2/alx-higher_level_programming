@@ -24,7 +24,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """setting private attribute of width to value"""
-        self.setter_validation("idth", value)
+        self.setter_validation("width", value)
         self.__width = value
 
     @property
@@ -33,10 +33,29 @@ class Rectangle(Base):
         return __height
 
     @height.setter
-    def height(self, value)
-    """setting private attribute of height to value"""
-    self.setter_validation("height", value)
-    self.__height = value
+    def height(self, value):
+        """setting private attribute of height to value"""
+        self.setter_validation("height", value)
+        self.__height = value
 
     @property
+    def x(self):
+        """Returning private attribute of x """
+        return __x
 
+    @x.setter
+    def x(self, value):
+        """setting private attribute of x to value"""
+        self.setter_validation("x", value)
+        self.__x = value
+
+    @property
+    def y(self):
+        """Returning private attribute of y"""
+        return __y
+
+    @y.setter
+    def y(self, value):
+        """setting private attribute of y to value"""
+        self.setter_validation("y", value)
+        self.__y = value
