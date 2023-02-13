@@ -19,7 +19,7 @@ class Rectangle(Base):
     @property
     def width(self):
         """Returning private attributes of width"""
-        return __width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -30,7 +30,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """Returning private attribute of height"""
-        return __height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -41,7 +41,7 @@ class Rectangle(Base):
     @property
     def x(self):
         """Returning private attribute of x """
-        return __x
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -52,10 +52,26 @@ class Rectangle(Base):
     @property
     def y(self):
         """Returning private attribute of y"""
-        return __y
+        return self.__y
 
     @y.setter
     def y(self, value):
         """setting private attribute of y to value"""
         self.setter_validation("y", value)
         self.__y = value
+
+
+    @staticmethod
+    def setter_validation(attribute, value):
+        if (value) is not int:
+            raise TypeError('{} must be an integer'.format(attribute))
+        if attribute == 'x' or attribute == 'y':
+            if value < 0:
+                raise ValueError('{} must be >= 0'.format(attribute))
+        elif value <= 0:
+            raise ValueError('{} must be >= 0'.format(attribute))
+
+    def __str__(self):
+        """overwritten the str method"""
+        return '[Rectangle] ({} {}/{} - {}/{}'.format(self.id, self.x, self.y,
+                                                    self.width, self.height)
