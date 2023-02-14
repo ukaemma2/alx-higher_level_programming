@@ -26,6 +26,9 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        '''module string representation of square'''
-        return '[Square] ({:d}) {:d}/{:d} - {:d}'.format(self.id, self.x,
-                                                            self.y, self.width)
+        """module string represation of square
+        """
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                                                         self.x,
+                                                         self.y,
+                                                         self.width)
