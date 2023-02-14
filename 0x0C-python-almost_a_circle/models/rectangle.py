@@ -86,38 +86,10 @@ class Rectangle(Base):
     def display(self):
         """Updating the class ``Rectangle`` that prints out instance with #"""
         rectangle = ""
-         rectangle = ""
-        print("\n" * self.y, end="")
+        print('\n', end="")
         for i in range(self.height):
-            rectangle += (" " * self.x) + ("#" * self.width) + "\n"
+            rectangle += (" " * self.x) + ("#" * self.width) + '\n'
         print(rectangle, end="")
-
-    def update(self, *args, **kwargs):
-        '''
-            Updates the arguments in the class
-        '''
-        if len(args) == 0:
-            for key, val in kwargs.items():
-                self.__setattr__(key, val)
-            return
-        try:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        except IndexError:
-            pass
-
-    def to_dictionary(self):
-        '''
-            Returns a dictionary representation of this class
-        '''
-        return {'x': getattr(self, "x"),
-                'y': getattr(self, "y"),
-                'id': getattr(self, "id"),
-                'height': getattr(self, "height"),
-                'width': getattr(self, "width")}
 
     @staticmethod
     def setter_validation(attribute, value):
