@@ -44,7 +44,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         '''
-         `   Setting private attribute
+            Setting private attribute
         '''
         self.setter_validation("height", value)
         self.__height = value
@@ -88,7 +88,7 @@ class Rectangle(Base):
         rectangle = ""
         print('\n', end="")
         for i in range(self.height):
-            rectangle += ("#" * self.width) + '\n'
+            rectangle += (" " * self.x) + ("#" * self.width) + '\n'
         print(rectangle, end="")
 
     @staticmethod
