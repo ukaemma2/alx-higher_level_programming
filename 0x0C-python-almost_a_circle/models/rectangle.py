@@ -80,29 +80,61 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Updating the class ``Rectangle`` that returns area"""
-        return (self.width * self.height)
+        '''
+            Returns the area of the rectangle
+        '''
+        return (self.height * self.width)
 
     def display(self):
-        """Updating the class ``Rectangle`` that prints out instance with #"""
+        '''
+            Prints to stdout the representation of the rectangle
+        '''
         rectangle = ""
-        print('\n', end="")
+        print("\n" * self.y, end="")
         for i in range(self.height):
-            rectangle += (" " * self.x) + ("#" * self.width) + '\n'
+            rectangle += (" " * self.x) + ("#" * self.width) + "\n"
         print(rectangle, end="")
+
+    def update(self, *args, **kwargs):
+        '''
+            Updates the arguments in the class
+        '''
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
+
+    def to_dictionary(self):
+        '''
+            Returns a dictionary representation of this class
+        '''
+        return {'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
 
     @staticmethod
     def setter_validation(attribute, value):
         if type(value) != int:
-            raise TypeError('{} must be an integer'.format(attribute))
-        if attribute == 'x' or attribute == 'y':
+            raise TypeError("{} must be an integer".format(attribute))
+        if attribute == "x" or attribute == "y":
             if value < 0:
-                raise ValueError('{} must be >= 0'.format(attribute))
+                raise ValueError("{} must be >= 0".format(attribute))
         elif value <= 0:
-            raise ValueError('{} must be > 0'.format(attribute))
+            raise ValueError("{} must be > 0".format(attribute))
 
     def __str__(self):
-        """Overwritting the str method"""
-
+        '''
+            Overwritting the str method
+        '''
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
