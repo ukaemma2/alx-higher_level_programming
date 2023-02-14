@@ -1,3 +1,4 @@
+guillaume@ubuntu:~/$ cat 3-main.py
 #!/usr/bin/python3
 """ 3-main """
 from models.rectangle import Rectangle

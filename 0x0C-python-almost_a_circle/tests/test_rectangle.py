@@ -48,5 +48,28 @@ class TestRectangle_instantiation(unittest.TestCase):
         r2 = Rectangle(4, 3, 2, 1)
         self.assertEqual(r1.id, r2.id - 1)
 
+    def test_five_args(self):
+        self.assertEqual(7, Rectangle(10, 2, 0, 0, 7).id)
+
+    def test_more_than_five_args(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, 4, 5, 6)
+
+    def test_width_private(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(5, 5, 0, 0, 1).__width)
+
+    def test_height_private(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(5, 5, 0, 0, 1).__height)
+
+    def test_x_private(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(5, 5, 0, 0, 1).__x)
+
+    def test_y_private(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(5, 5, 0, 0, 1).__y)
+
 if __name__ == '__main__':
     unittest.main()
