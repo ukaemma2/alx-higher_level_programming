@@ -71,5 +71,6 @@ class TestRectangle_instantiation(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(Rectangle(5, 5, 0, 0, 1).__y)
 
+
 if __name__ == '__main__':
     unittest.main()
