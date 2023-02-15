@@ -2,6 +2,9 @@
 """Defines a base model class."""
 
 
+import json
+
+
 class Base:
     """Represent the base model.
     Represents the "base" for all other classes in project 0x0C*.
@@ -21,3 +24,16 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        '''JSON represensation for sharing data
+        Return the JSON serialization of a list of dicts.
+        Args:
+            list_dictionaries (list): A list of dictionaries
+        '''
+
+        if list_dictionaries is None or list_dictionaries == '[]':
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
