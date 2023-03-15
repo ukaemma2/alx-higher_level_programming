@@ -1,2 +1,2 @@
-cribe a table
+-- cribe a table
 SHOW CREATE TABLE first_table;
