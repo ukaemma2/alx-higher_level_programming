@@ -10,4 +10,4 @@ function factorial (n) {
   }
 }
 const input = Number(process.argv[2]);
-console.log(`factorial: ${factorial(input)}`);
+console.log(`${factorial(input)}`);
