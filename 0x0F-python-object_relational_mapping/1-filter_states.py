@@ -23,7 +23,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     """Build the SQL Query"""
-    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+    query = """SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"""
 
     """execute the query"""
     cursor.execute(query)
