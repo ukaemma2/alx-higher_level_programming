@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" fetch statets starting with N (upper N) from the database hbtn_0e_0_usa"""
 
 import MySQLdb
 import sys
