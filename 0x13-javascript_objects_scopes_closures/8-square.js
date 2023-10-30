@@ -8,6 +8,7 @@ exports.esrever = function (list) {
     list[i] = aux;
     i++;
     len--;
+
   }
   return list;
 };
