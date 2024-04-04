@@ -1,6 +1,5 @@
 # Requirements
 
-
 ## General
 
 * Allowed editors: vi, vim, emacs
@@ -11,3 +10,4 @@
 * You must use JQuery version 3.x
 * You are not allowed to use var
 * `HTML should not reload for each action: DOM manipulation, update values, fetch data…
+* AUTHOR UAKH EMMANUEL OGBONNA
